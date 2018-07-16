@@ -788,7 +788,7 @@ func (d *Decoder) decodeSlice(ctx *DecodeContext, data interface{}, val reflect.
 						return nil
 					}
 					// Create slice of maps of other sizes
-					return d.decodeSlice(name, []interface{}{data}, val)
+					return d.decodeSlice(ctx, []interface{}{data}, val)
 
 				case dataValKind == reflect.String && valElemType.Kind() == reflect.Uint8:
 					return d.decodeSlice(ctx, []byte(dataVal.String()), val)
